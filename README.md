@@ -99,7 +99,7 @@ A full test suite script demonstrating output verification across bcrypt salt ge
 /*
     BSL_Bcrypt Test Suite
     Author: Jofel Batutay (Bonezegei)
-    Date: Sept 1, 2026
+    Date: October 24, 2026
 */
 
 include("lib/bcrypt.bzg");

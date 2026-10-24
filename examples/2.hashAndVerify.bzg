@@ -1,0 +1,22 @@
+/*
+    Password Hashing & Verification Example
+    Author: Jofel Batutay (Bonezegei)
+    Date: October 24, 2026
+*/
+
+include("lib/bcrypt.bzg");
+
+var b = bcrypt();
+var password = "SuperSecretPassword123";
+
+// Hash password with automatic salt or custom cost
+var hashed = b.hash(password, 10);
+print("Hashed Output: " + hashed);
+
+// Verify correct password
+var is_valid = b.verify(password, hashed);
+print("Valid Password Test: " + is_valid); // Outputs 1.0 (True)
+
+// Verify wrong password
+var is_invalid = b.verify("WrongPassword", hashed);
+print("Invalid Password Test: " + is_invalid); // Outputs 0.0 (False)

@@ -1,0 +1,16 @@
+/*
+    Bcrypt Salt Generation Example
+    Author: Jofel Batutay (Bonezegei)
+    Date: October 24, 2026
+*/
+
+include("lib/bcrypt.bzg");
+
+var b = bcrypt();
+
+// Generate salt with default work factor (10)
+print("Default Salt (Cost 10): " + b.gensalt());
+
+// Generate salts with custom work factors
+print("Salt (Cost 4):  " + b.gensalt(4));
+print("Salt (Cost 12): " + b.gensalt(12));
