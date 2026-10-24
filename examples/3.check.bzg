@@ -19,10 +19,10 @@ var password = "Bonezegei_Secure_Pass_2026";
 
 print("--- Salt Generation & Length Check ---");
 var salt = b.gensalt(10);
-check("Salt Length == 29", string_len(salt), 29);
+check("Salt Length == 29", sizeof(salt), 29);
 
 print("\n--- Hashing & Password Verification ---");
 var hash_output = b.hash(password, salt);
-check("Hash Length == 60", string_len(hash_output), 60);
+check("Hash Length == 60", sizeof(hash_output), 60);
 check("Verify Valid Password", b.verify(password, hash_output), 1.0);
 check("Reject Invalid Password", b.verify("IncorrectPass", hash_output), 0.0);
